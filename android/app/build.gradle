@@ -2,30 +2,31 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
-    id("com.google.gms.google-services")
+    id("com.google.gms.google-services") // Apply the Google Services plugin
 }
 
 def localProperties = new Properties()
-def localPropertiesFile = rootProject.file("local.properties")
+def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
-    localPropertiesFile.withReader("UTF-8") { reader ->
+    localPropertiesFile.withReader('UTF-8') { reader ->
         localProperties.load(reader)
     }
 }
 
-def flutterVersionCode = localProperties.getProperty("flutter.versionCode")
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
-    flutterVersionCode = "1"
+    flutterVersionCode = '1'
 }
 
-def flutterVersionName = localProperties.getProperty("flutter.versionName")
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
-    flutterVersionName = "1.0"
+    flutterVersionName = '1.0'
 }
 
 android {
     namespace = "com.example.mcq_app"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 34 // Update to 34 or 35
+
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -33,10 +34,14 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
+    kotlinOptions {
+        jvmTarget = '1.8' // Ensure Kotlin targets Java 8
+    }
+
     defaultConfig {
         applicationId = "com.example.mcq_app"
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        minSdk = flutter.minSdkVersion.toInteger() // Ensure this is an integer
+        targetSdk = 34 // Update to 34 or 35
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
     }
@@ -44,231 +49,18 @@ android {
     buildTypes {
         release {
             signingConfig = signingConfigs.debug
+            minifyEnabled true // Enable code shrinking and obfuscation
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 flutter {
-    source = "../.."
+    source = '../..'
 }
 
 dependencies {
-  implementation(platform("com.google.firebase:firebase-bom:33.9.0"))
-  implementation "com.google.firebase:firebase-analytics"
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0")) // Update this
+    implementation "com.google.firebase:firebase-analytics"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

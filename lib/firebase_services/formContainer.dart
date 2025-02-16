@@ -13,7 +13,8 @@ class FormContainer extends StatefulWidget {
   final ValueChanged<String>? onfieldSubmitted;
 
   const FormContainer(
-      {this.controller,
+      {super.key,
+      this.controller,
       this.fieldkey,
       this.helperText,
       this.hintText,

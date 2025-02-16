@@ -1,0 +1,2 @@
+C:/Users/dipsa/Desktop/flutter/pharmacy_mcq_app/android/app/.cxx/Debug/4i5vn515/x86/CMakeFiles/edit_cache.dir
+C:/Users/dipsa/Desktop/flutter/pharmacy_mcq_app/android/app/.cxx/Debug/4i5vn515/x86/CMakeFiles/rebuild_cache.dir

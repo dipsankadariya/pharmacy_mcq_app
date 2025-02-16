@@ -16,9 +16,9 @@ class _SignupPageState extends State<SignupPage> {
       FirebaseAuthService(); // Create an instance of `FirebaseAuthService` to handle authentication logic.
 
   //manage input from text fields.
-  TextEditingController _userController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _userController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   void dispose() {
@@ -88,7 +88,8 @@ class _SignupPageState extends State<SignupPage> {
                     onTap: () {
                       Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(builder: (context) => SignInPage()),
+                          MaterialPageRoute(
+                              builder: (context) => const SignInPage()),
                           (route) => false);
                     },
                     child: const Text(

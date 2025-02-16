@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class FirebaseAuthService {
   // Define a class `FirebaseAuthService` to encapsulate Firebase authentication-related methods.
-  FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<User?> signUpWithEmailAndPassword(
       String email, String password) async {
@@ -26,5 +26,6 @@ class FirebaseAuthService {
             email: email, password: password);
       } catch (e) {}
     }
+    return null;
   }
 }
