@@ -1,31 +1,31 @@
 name: mcq_app
 description: "A new Flutter project."
-publish_to: "none" # Prevents accidental publishing to pub.dev
+publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.4.3 <4.0.0" # Ensure this matches your Dart SDK version
+  sdk: ">=3.4.3 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  firebase_core: ^2.24.0 # Updated to the latest stable version
-  cloud_firestore: ^4.15.1 # Updated to the latest stable version
-  provider: ^6.1.2 # Latest stable version
-  firebase_auth: ^4.19.1 # Updated to the latest stable version
-  firebase_storage: ^11.6.1 # Updated to the latest stable version
-  cupertino_icons: ^1.0.6 # Latest stable version
+  firebase_core: ^2.24.0
+  cloud_firestore: ^4.15.1
+  provider: ^6.1.2
+  firebase_auth: ^4.19.1
+  firebase_storage: ^11.6.1
+  cupertino_icons: ^1.0.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0 # Updated to the latest stable version
+  flutter_lints: ^3.0.0
 
 flutter:
   fonts:
     - family: Roboto
       fonts:
-        - asset: assets/fonts/RobotoMono-VariableFont_wght.ttf # Ensure the file extension is correct
+        - asset: assets/fonts/RobotoMono-VariableFont_wght.ttf
 
   uses-material-design: true

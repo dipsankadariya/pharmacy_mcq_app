@@ -12,17 +12,14 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
-  final FirebaseAuthService _auth =
-      FirebaseAuthService(); // Create an instance of `FirebaseAuthService` to handle authentication logic.
+  final FirebaseAuthService _auth = FirebaseAuthService();
 
-  //manage input from text fields.
   final TextEditingController _userController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   @override
   void dispose() {
-    // Dispose of the `TextEditingController` instances to free up resources when the widget is removed.
     _userController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
@@ -115,8 +112,8 @@ class _SignupPageState extends State<SignupPage> {
     if (user != null) {
       Navigator.pushNamed(context, '/home');
     } else {
-      const ScaffoldMessenger(
-        child: SnackBar(content: Text("Some Error Occured")),
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Some Error Occurred")),
       );
     }
   }
